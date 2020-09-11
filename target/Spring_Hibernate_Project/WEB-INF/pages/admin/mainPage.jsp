@@ -17,7 +17,11 @@
 <body>
 <div class="mainBody">
     <div class="top_Bar">
-        <button type="button" class="log_out">Logout</button>
+        <div class="exist">
+            <div class="container">
+                <button type="button" class="log_out">Logout</button>
+            </div>
+        </div>
     </div>
     <div class="left_Bar">
         <div class="left_buttons">
@@ -44,6 +48,7 @@
                     <tr style="text-align: center">
                         <td><c:out value="${customer.id}"/></td>
                         <td><c:out value="${customer.username}"/></td>
+                        <td><c:out value="${customer.password}"/> </td>
                         <td><c:out value="${customer.email}"/></td>
                         <td><c:out value="${customer.phone}"/></td>
                     </tr>

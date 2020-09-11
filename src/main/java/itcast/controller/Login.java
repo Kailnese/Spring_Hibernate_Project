@@ -1,7 +1,7 @@
 package itcast.controller;
 
 import itcast.domain.Customer;
-import itcast.itcast.GetSession;
+import itcast.itcast.ProjectFactory;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class Login {
     @RequestMapping("/verify")
     public String Login(Customer customer){
-        SessionFactory sessionFactory = GetSession.getSessionFactory();
+        SessionFactory sessionFactory = ProjectFactory.getSessionFactory();
         Session session= sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         System.out.println(customer);

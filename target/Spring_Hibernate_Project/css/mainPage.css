@@ -3,6 +3,35 @@ body{
   height: 100%;
   width: 100%;
 }
+.mainBody{
+  margin-top: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: white;
+}
+.left_Bar{
+  position: relative;
+  top: 10%;
+  height: 90%;
+  width: 15%;
+  background-color: white;
+}
+.top_Bar{
+  position: absolute;
+  height: 10%;
+  width: inherit;
+  background-color: white;
+}
+.content_box{
+  position: fixed;
+  height: 80%;
+  width: 80%;
+  bottom: 0;
+  right: 0;
+  margin-right: 4%;
+  margin-bottom: 3%;
+  background-color: black;
+}
 .retrieve{
   font-size: 22px;
   font-family: "Times New Roman", Times, serif;
@@ -12,57 +41,46 @@ body{
   border-spacing: 0 1em;
   width: 100%;
 }
-.mainBody{
-  margin-top: 0;
-  height: 100vh;
-  width: 100%;
-  background-color: grey;
-}
-.left_Bar{
-  position: relative;
-  top: 10%;
-  height: 90%;
-  width: 10%;
-  background-color: white;
-}
-.top_Bar{
-  position: absolute;
-  height: 10%;
-  width: inherit;
-  background-color: grey;
-}
-.content_box{
-  position: fixed;
-  height: 90%;
-  width: 89%;
-  bottom: 0;
-  right: 0;
-  background-color: black;
-}
 .content{
   margin: auto;
-  width: 90%;
-  height: 90%;
-  margin-top: 2%;
-  border: 3px solid #FFA273;
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+  border: 3px solid black;
   background-color: white;
   padding: 10px;
 }
-.log_out{
+.exist{
+  background-color: white;
+  width: 4%;
   float: right;
-  margin-right: 1%;
-  margin-top: 1%;
+  height: 100%;
+  position: relative;
+  border-left: 3px solid black;
+  border-bottom: 3px solid black;
+}
+.container{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  /* background-color:white; */
+}
+.log_out{
   border-radius: 100px;
-  background-color: #35D4A0;
+  background-color: #FFFFFF;
   height: 50px;
   width: 50px;
-  border: 2px solid #FFC773;
-  color: white;
+  border: 2px solid black;
+  color: #000000;
   transition-duration: 0.3s;
   text-align: center;
 }
 .log_out:hover{
-  background-color: #FFC773;
+  background-color: black;
+  color: white;
 }
 .left_buttons button{
   border-radius: 6px;
@@ -76,7 +94,7 @@ body{
   transition: all 0.5s;
   cursor: pointer;
   margin: 4%;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 .button span {

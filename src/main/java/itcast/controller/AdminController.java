@@ -1,13 +1,12 @@
 package itcast.controller;
 
 import itcast.domain.Customer;
-import itcast.itcast.GetSession;
+import itcast.itcast.ProjectFactory;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,7 +18,7 @@ import java.util.ArrayList;
 public class AdminController {
     @RequestMapping(path="/getCustomerList", method = RequestMethod.GET)
     public String getCustomerList(ModelMap model){
-        SessionFactory sessionFactory = GetSession.getSessionFactory();
+        SessionFactory sessionFactory = ProjectFactory.getSessionFactory();
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         Query query = session.createQuery("from Customer");
