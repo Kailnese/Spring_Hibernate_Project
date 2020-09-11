@@ -1,0 +1,105 @@
+body{
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+}
+.retrieve{
+  font-size: 22px;
+  font-family: "Times New Roman", Times, serif;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse:separate;
+  border-spacing: 0 1em;
+  width: 100%;
+}
+.mainBody{
+  margin-top: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: grey;
+}
+.left_Bar{
+  position: relative;
+  top: 10%;
+  height: 90%;
+  width: 10%;
+  background-color: white;
+}
+.top_Bar{
+  position: absolute;
+  height: 10%;
+  width: inherit;
+  background-color: grey;
+}
+.content_box{
+  position: fixed;
+  height: 90%;
+  width: 89%;
+  bottom: 0;
+  right: 0;
+  background-color: black;
+}
+.content{
+  margin: auto;
+  width: 90%;
+  height: 90%;
+  margin-top: 2%;
+  border: 3px solid #FFA273;
+  background-color: white;
+  padding: 10px;
+}
+.log_out{
+  float: right;
+  margin-right: 1%;
+  margin-top: 1%;
+  border-radius: 100px;
+  background-color: #35D4A0;
+  height: 50px;
+  width: 50px;
+  border: 2px solid #FFC773;
+  color: white;
+  transition-duration: 0.3s;
+  text-align: center;
+}
+.log_out:hover{
+  background-color: #FFC773;
+}
+.left_buttons button{
+  border-radius: 6px;
+  background-color: black;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 14px;
+  padding: 20px;
+  width: 90%;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 4%;
+  margin-top: 20px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
