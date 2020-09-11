@@ -44,7 +44,6 @@
                     <tr style="text-align: center">
                         <td><c:out value="${customer.id}"/></td>
                         <td><c:out value="${customer.username}"/></td>
-                        <td><c:out value="${customer.password}"/></td>
                         <td><c:out value="${customer.email}"/></td>
                         <td><c:out value="${customer.phone}"/></td>
                     </tr>
