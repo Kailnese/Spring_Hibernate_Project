@@ -34,4 +34,12 @@ public class AdminController {
         transaction.commit();
         return "pages/admin/mainPage";
     }
+    @RequestMapping(path = "/directToLearning", method = RequestMethod.POST)
+    public String directToLearning(){
+        return "pages/admin/learningPlace/learning";
+    }
+    @RequestMapping(path = "/backToMain", method = RequestMethod.GET)
+    public String directToMain(){
+        return "pages/admin/mainPage";
+    }
 }

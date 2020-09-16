@@ -26,12 +26,15 @@
     <div class="left_Bar">
         <div class="left_buttons">
             <form action="../admin/getCustomerList" method="get">
-                <button type="submit" class="button" onclick="document.getElementsByName('retrieve').style.visibility='visible'"><span>Get Customer List</span><br></button>
+                <button type="submit" class="button"><span>Get Customer List</span><br></button>
             </form>
             <button type="button" class="button"><span>TBC</span><br></button>
             <button type="button" class="button"><span>TBC</span><br></button>
             <button type="button" class="button"><span>TBC</span><br></button>
-            <button type="button" class="button"><span>TBC</span><br></button>
+            <form action="../admin/directToLearning" method="post">
+                <button type="submit" class="button"><span>To Learning Area</span><br></button>
+            </form>
+
         </div>
     </div>
     <div class="content_box">

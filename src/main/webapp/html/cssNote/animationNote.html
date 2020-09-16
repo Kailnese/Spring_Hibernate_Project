@@ -1,0 +1,61 @@
+<div class="title" style="background-color: grey;text-align: center;width: 100%;">
+  <h1>Some Animation Notes</h1>
+</div>
+<div class="box" style="position: absolute;height: 90%;width: 99%;border-top: 2px solid #000;overflow:auto">
+  <h1>Definition and Usage</h1>
+  <h3>The animation property is a shorthand property for:</h3>
+  <ul>
+    <li><h3>animation-name</h3></li>
+    <li><h3>animation-duration</h3></li>
+    <li><h3>animation-timing-function</h3></li>
+    <li><h3>animation-delay</h3></li>
+    <li><h3>animation-iteration-count</h3></li>
+    <li><h3>animation-direction</h3></li>
+    <li><h3>animation-fill-mode</h3></li>
+    <li><h3>animation-play-state</h3></li>
+  </ul>
+  <h3>Example</h3>
+  <h3>Binding an animation to a div element, using the shorthand property:</h3>
+  <div class="code">
+    div {
+      width: 100px;
+      height: 100px;
+      background: red;
+      position: relative;
+      animation: mymove 5s infinite;
+    }
+
+    @keyframes mymove {
+      from {left: 0px;}
+      to {left: 200px;}
+    }
+    <style>
+      @keyframes mymove {
+        from {left: 0px;}
+        to {left: 200px;}
+      }
+    </style>
+    <div class="" style="width:100px;height: 100px; background: red; position: relative; animation: mymove 5s infinite;"></div>
+    <h3>Or we could add delay, which can makes element's animation delay for n seconds</h3>
+    <h3>Or we sign its a direction which makes it move as we want</h3>
+    <style>
+      .secondSquare {
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: relative;
+        animation: myfirst 5s 2;
+        animation-direction: alternate;
+      }
+
+      @keyframes myfirst {
+        0%   {background: red; left: 0px; top: 0px;}
+        25%  {background: yellow; left: 200px; top: 0px;}
+        50%  {background: blue; left: 200px; top: 200px;}
+        75%  {background: green; left: 0px; top: 200px;}
+        100% {background: red; left: 0px; top: 0px;}
+      }
+    </style>
+    <div class="secondSquare"></div>
+  </div>
+</div>
