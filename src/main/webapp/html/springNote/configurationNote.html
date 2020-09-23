@@ -1,0 +1,85 @@
+<div class="title" style="background-color: grey;text-align: center;width: 100%;">
+  <h1>Spring Configuration and required Maven dependencies</h1>
+</div>
+<div class="box" style="position: absolute;height: 90%;width: 99%;border-top: 2px solid #000;overflow:auto">
+  <h3>I. dependencies required for spring and srpingmvc framework: </h3>
+  <ul style="list-style-type: circle">
+    <li><h3>spring Aop:</h3>Spring AOP enables Aspect-Oriented Programming in spring applications,
+      In AOP, aspects enable the modularization of concerns such as transaction management, logging
+      or security that cut across multiple types and objects.</li>
+    <li><h3>spring Aspects</h3>Spring提供的对AspectJ框架的整合</li>
+    <li><h3>spring Beans</h3>Spring IOC的基础实现，包含访问配置文件、创建和管理bean等。</li>
+    <li><h3>spring Context</h3>在基础IOC功能上提供扩展服务，此外还提供许多企业级服务的支持，有邮件服务、任务调度、JNDI定位，EJB集成、远程访问、缓存以及多种视图层框架的支持。</li>
+    <li><h3>spring Context Support</h3>Spring context的扩展支持，用于MVC方面。</li>
+    <li><h3>spring Core</h3>Spring的核心工具包</li>
+    <li><h3>spring expression</h3>Spring表达式语言</li>
+    <li><h3>spring Framework Bom</h3></li>
+    <li><h3>spring Instrument</h3>Spring对服务器的代理接口</li>
+    <li><h3>spring Instrument Tomcat</h3>Spring对tomcat连接池的集成</li>
+    <li><h3>spring JDBC</h3>对JDBC 的简单封装</li>
+    <li><h3>spring JMS</h3>为简化jms api的使用而做的简单封装</li>
+    <li><h3>spring Messaging</h3></li>
+    <li><h3>spring orm</h3>整合第三方的orm实现，如hibernate，ibatis，jdo以及spring 的jpa实现</li>
+    <li><h3>spring oxm</h3>Spring对于object/xml映射的支持，可以让JAVA与XML之间来回切换</li>
+    <li><h3>spring tx</h3>为JDBC、Hibernate、JDO、JPA等提供的一致的声明式和编程式事务管理。</li>
+    <li><h3>spring web</h3>包含Web应用开发时，用到Spring框架时所需的核心类，包括自动载入WebApplicationContext特性的类、Struts与JSF集成类、文件上传的支持类、Filter类和大量工具辅助类。</li>
+    <li><h3>spring webmvc</h3>包含SpringMVC框架相关的所有类。包含国际化、标签、Theme、视图展现的FreeMarker、JasperReports、 Tiles、Velocity、XSLT相关类。当然，如果你的应用使用了独立的MVC框架，则无需这个JAR文件里的任何类。</li>
+    <li><h3>spring websocket</h3>提供 Socket通信， web端的推送功能</li>
+  </ul>
+  From: <a href="https://blog.csdn.net/panchang199266/article/details/80305577">https://blog.csdn.net/panchang199266/article/details/80305577</a>
+  <h3>II. Configuration setting in web.xml file</h3>
+  As we know that spring use DispatcherServlet as front controller like it provides a single entry point for a client request to Spring MVC web application and forwards request to Spring MVC controllers for processing.
+ <br>From <a href="https://www.java67.com/2017/06/what-is-use-of-dispatcherservlet-in-spring-mvc.html#ixzz6YHcmPl00">https://www.java67.com/2017/06/what-is-use-of-dispatcherservlet-in-spring-mvc.html#ixzz6YHcmPl00</a>
+ <br><h3>Sample: </h3>
+ <div class="">
+   <pre>
+     &ltweb-app>
+      &ltdisplay-name>Archetype Created Web Application&lt/display-name>
+      &ltservlet>
+        &ltservlet-name>dispatcherServlet&lt/servlet-name>
+        &ltservlet-class>org.springframework.web.servlet.DispatcherServlet&lt/servlet-class>
+        &ltinit-param>
+          &ltparam-name>contextConfigLocation&lt/param-name>
+          &ltparam-value>classpath:springXML/springmvc.xml&lt/param-value>
+        &lt/init-param>
+        &ltload-on-startup>1&lt/load-on-startup>
+      &lt/servlet>
+      &ltservlet-mapping>
+        &ltservlet-name>dispatcherServlet&lt/servlet-name>
+        &lturl-pattern>/&lt/url-pattern>
+      &lt/servlet-mapping>
+    &lt/web-app>
+  </pre>
+ </div>
+ <div class="">
+   <h3>III. Configuration setting in springmvc.xml file</h3>
+   <pre>
+     &ltbeans xmlns="http://www.springframework.org/schema/beans"
+           xmlns:mvc="http://www.springframework.org/schema/mvc"
+           xmlns:context="http://www.springframework.org/schema/context"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/mvc
+            http://www.springframework.org/schema/mvc/spring-mvc.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd">
+        &ltcontext:component-scan base-package="itcast.controller">&lt/context:component-scan>
+        &ltbean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+            &ltproperty name="prefix" value="/WEB-INF/"/>
+            &ltproperty name="suffix" value=".jsp"/>
+        &lt/bean>
+        &ltmvc:resources mapping="/jquery/**" location="/jquery/"/>
+        &ltmvc:resources mapping="/images/**" location="/images/"/>
+        &ltmvc:resources mapping="/css/**" location="/css/"/>
+        &ltmvc:resources mapping="/html/**" location="/html/"/>
+        &ltmvc:annotation-driven/>
+    &lt/beans>
+   </pre>
+   <h2>Appendix: </h2>
+   <h3>1. Basic springmvc.xml config explain: <a href="https://blog.csdn.net/zwl18210851801/article/details/78489021">spring-mvc.xml 配置文件详解</a></h3>
+   <h3>2. spring xmlns explain: <a href="https://blog.csdn.net/gxftry1st/article/details/59535487">spring配置文件头部xmlns配置 详细解释</a></h3>
+   <h3>3. xmlns explain: <a href="https://www.cnblogs.com/foreverlin/p/9947486.html">xmlns详解（转载）</a></h3>
+ </div>
+</div>

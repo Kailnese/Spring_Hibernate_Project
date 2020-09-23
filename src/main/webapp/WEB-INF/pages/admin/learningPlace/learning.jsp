@@ -21,6 +21,11 @@
         $(".content_box").load(url);
         return false;
       })
+      $(".springConfig").click(function (){
+        var url = this.href;
+        $(".content_box").load(url);
+        return false;
+      })
     })
   </script>
 </head>
@@ -47,7 +52,7 @@
         </ul>
       </div>
     </li>
-    <li><a href="">Ajax note</a>
+    <li><a href="">Ajax Note</a>
       <div class="sub-menu-1">
         <ul>
           <li><a href="#">First Mission</a></li>
@@ -56,16 +61,25 @@
         </ul>
       </div>
     </li>
-    <li><a href="">CSS note</a>
+    <li><a href="">CSS Note</a>
       <div class="sub-menu-1">
         <ul>
-          <li><a name="basicNotes" id="basicNotes" class="basicNotes" href="../html/cssNote/basicNote.html">Basic Notes</a></li>
+          <li><a class="basicNotes" href="../html/cssNote/basicNote.html">Basic Notes</a></li>
           <li><a class="animationNotes" href="../html/cssNote/animationNote.html">Animation Notes</a></li>
           <li><a href="#">Third Mission</a></li>
         </ul>
       </div>
     </li>
-    <li><a href="">Spring note</a>
+    <li><a href="">Spring and SpringMVC Note</a>
+      <div class="sub-menu-1">
+        <ul>
+          <li><a class="springConfig" href="../html/springNote/configurationNote.html">Configuration Setting</a></li>
+          <li><a href="#">Second Mission</a></li>
+          <li><a href="#">Third Mission</a></li>
+        </ul>
+      </div>
+    </li>
+    <li><a href="">Hibernate Note</a>
       <div class="sub-menu-1">
         <ul>
           <li><a href="#">First Mission</a></li>
@@ -74,7 +88,7 @@
         </ul>
       </div>
     </li>
-    <li><a href="">SpringMVC note</a>
+    <li><a href="">Struts2 Note</a>
       <div class="sub-menu-1">
         <ul>
           <li><a href="#">First Mission</a></li>
@@ -83,25 +97,7 @@
         </ul>
       </div>
     </li>
-    <li><a href="">Hibernate note</a>
-      <div class="sub-menu-1">
-        <ul>
-          <li><a href="#">First Mission</a></li>
-          <li><a href="#">Second Mission</a></li>
-          <li><a href="#">Third Mission</a></li>
-        </ul>
-      </div>
-    </li>
-    <li><a href="">Struts2 note</a>
-      <div class="sub-menu-1">
-        <ul>
-          <li><a href="#">First Mission</a></li>
-          <li><a href="#">Second Mission</a></li>
-          <li><a href="#">Third Mission</a></li>
-        </ul>
-      </div>
-    </li>
-    <li><a href="">MyBatis note</a>
+    <li><a href="">MyBatis Note</a>
       <div class="sub-menu-1">
         <ul>
           <li><a href="#">First Mission</a></li>
